@@ -209,7 +209,6 @@ body {
   margin-bottom: 40px;
   text-transform: uppercase;
   color: #555;
-  text-decoration: underline;
 }
 
 #food h5 {
@@ -294,7 +293,6 @@ body {
   font-size: 3.4rem;
   font-weight: 400;
   color: #666;
-  text-decoration: underline;
 }
 
 .food-menu-container {
