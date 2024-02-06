@@ -135,6 +135,48 @@ body {
 
 /* ......//about us//...... */
 
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+#banner {
+  width: 600px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  border: solid black;
+
+  & img {
+      display: block;
+      object-fit: cover;
+      animation: slide 4s cubic-bezier(.86, 0, .05, 1) infinite alternate;
+  }
+}
+#banner-heading{
+  position: absolute;
+  inset: 30% 20%;
+  & h1{
+      color: #fff;
+      font-size: 70px;
+  }
+
+}
+
+@keyframes slide {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(-80%);
+  }
+
+}
+
+
 #about {
   padding: 50px 0;
   background: #f5f5f7;
@@ -187,14 +229,14 @@ body {
   }
 }
 
-.about-img img {
+/* .about-img img {
   display: block;
   height: 400px;
   max-width: 100%;
   margin: auto;
   object-fit: cover;
   object-position: right;
-}
+} */
 
 /* ..........////Food category///........... */
 
@@ -386,12 +428,14 @@ body {
 
 #contact {
   padding: 5rem 0;
-  background: rgb(226, 226, 226);
+  background: rgb(242, 233, 233);
+  
 }
 
 .contact-container {
   display: flex;
   background: #fff;
+  border: solid black;
 }
 
 .contact-img {
@@ -461,7 +505,7 @@ body {
   font-size:18px;
   line-height:1.6;
   display: flex;
-  margin-left: 420px;
+  margin-left: 520px;
 }
 
 .footer-basic li {
@@ -695,6 +739,11 @@ body {
   .img-container .btn {
     font-size: 0.7rem;
   }
+
+  /* #food h5{
+    font-size: medium;
+    text-align: center;
+  } */
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
