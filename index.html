@@ -30,6 +30,41 @@
                 <li><a href="#food-menu">Menu</a></li>
                 <li><a href="#testimonials">Testimonial</a></li>
                 <li><a href="#contact">Contact</a></li>
+
+                
+                <!--Step 1 : Adding HTML-->
+                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+             
+                <div id="id01" class="modal">
+             
+                    <form class="modal-content animate" action="index.html">
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <img src=
+                            "Images/food fusion logo.jpg" alt="Avatar" class="avatar">
+                        </div>
+             
+                        <div class="container">
+                            <label><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" required>
+             
+                            <label><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+             
+                            <button type="submit">Login</button>
+                            <input type="checkbox" checked="checked"> Remember me
+                        </div>
+             
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+                        </div>
+                    </form>
+                </div>  
+               
+
+
+
             </ul>
             <h1 class="logo"><img src="./Images/food fusion logo.jpg" alt="img" height="40px"></h1>
         </div>
@@ -74,7 +109,7 @@
         </div>
     </section>
     <section id="food">
-        <h2>Our Speciality</h2>
+        <h2>Our Speciality..</h2>
         <h5>We provide a wide range of cuisines and dishes to choose from so 
             that every foodie in town has their best experience with us.....</h5>
         <div class="food-container container">
@@ -111,7 +146,7 @@
         </div>
     </section>
     <section id="food-menu">
-        <h2 class="food-menu-heading">Food Fusion Menu</h2>
+        <h2 class="food-menu-heading">Food Fusion Menu..</h2>
         <div class="food-menu-container container">
             <div class="food-menu-item">
                 <div class="food-img">
@@ -189,7 +224,7 @@
         </div>
     </section>
     <section id="testimonials">
-        <h2 class="testimonial-title">What Our Customers Say</h2>
+        <h2 class="testimonial-title">What Our Customers Say..</h2>
         <div class="testimonial-container container">
             <div class="testimonial-box">
                 <div class="customer-detail">
