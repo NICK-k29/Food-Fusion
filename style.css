@@ -943,15 +943,34 @@ body {
   .img-container .btn {
     font-size: 0.7rem;
   }
-
-  /* #food h5{
-    font-size: medium;
-    text-align: center;
-  } */
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
   .showcase-area {
     height: 50vmax;
   }
+  
 }
+@media (min-width: 320px) and (max-width: 500px) {
+  #food h5{
+    margin-left: 2.5em;
+    font-size: 1rem;
+  }
+
+  #banner{
+    /* width: 20em;
+    margin-left: 1em; */
+    min-height: 412px;
+    width: 24rem;
+    object-fit: cover;
+    margin:auto;
+
+    }
+
+    .footer-basic ul {
+      font-size: 1rem;
+    }
+}
+
+
+
