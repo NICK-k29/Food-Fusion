@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Fusion</title>
+    <link rel="icon" type="img" href="./Images/food fusion logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <style>
+            /* css code */
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ///////////..utility classes../////////// */
+
+  /*assign full width inputs*/
+  input[type=text],
+  input[type=password] {
+      width: 100%;
+      padding: 12px 10px;
+      margin: 2px 0;
+      display: inline-block;
+      border: 1px solid #d9b7b7;
+      box-sizing: border-box;
+  }
+ 
+  /*set a style for the buttons*/
+  button {
+    color: #fff;
+    background: #8a4949;
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+     margin-left: 2em;
+     margin-bottom: 1em;
+    text-transform: uppercase;
+    font-weight: small;
+  }
+ 
+  /* set a hover effect for the button*/
+  button:hover {
+      opacity: 0.8;
+  }
+ 
+  /*set extra style for the cancel button*/
+  .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #fb4f43b9;
+  }
+ 
+  /*centre the display image inside the container*/
+  .imgcontainer {
+      text-align: center;
+      margin: 10px 0 2px 0;
+      position: relative;
+  }
+ 
+  /*set image properties*/
+  img.avatar {
+      height: 30%;
+      width: 20%;
+      border-radius: 50%;
+  }
+ 
+  /*set padding to the container*/
+  .container {
+      padding: 6px;
+  }
+   
+  /*set the forgot password text*/
+  span.psw {
+      float: right;
+      padding-top: 6px;
+  }
+ 
+  /*set the Modal background*/
+  .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(201, 194, 194);
+      background-color: rgba(176, 174, 174, 0.4);
+      padding-top: 60px;
+  }
+ 
+  /*style the model content box*/
+  .modal-content {
+      background-color: #c1a8a8;
+      margin: 5% auto 15% auto;
+      border: 1px solid #9b8d8d;
+      width: 80%;
+  }
+ 
+  /*style the close button*/
+  .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 75px;
+      font-weight: bold;
+  }
+   
+  .close:hover,
+  .close:focus {
+      color: red;
+      cursor: pointer;
+  }
+ 
+  /* add zoom animation*/
+  .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+  }
+   
+  @-webkit-keyframes animatezoom {
+      from {
+          -webkit-transform: scale(0)
+      }
+      to {
+          -webkit-transform: scale(1)
+      }
+  }
+   
+  @keyframes animatezoom {
+      from {
+          transform: scale(0)
+      }
+      to {
+          transform: scale(1)
+      }
+  }
+   
+  @media screen and (max-width: 300px) {
+      span.psw {
+          display: block;
+          float: none;
+      }
+      .cancelbtn {
+          width: 100%;
+      }
+  }
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  text-decoration: none;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 1em;
+  text-transform: uppercase;
+  font-weight: small;
+}
+
+.btn-primary {
+  color: #fff;
+  background: #8a4949;
+}
+
+.btn-primary:hover {
+  background: #8d5c56;
+  transition: background 0.3s ease-in-out;
+}
+
+/* ............/navbar/............ *
+
+/* desktop mode............/// */
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+  display: none;
+}
+
+.navbar {
+  box-shadow: 0px 5px 10px 0px #aaa;
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  opacity: 0.85;
+  height: 50px;
+  z-index: 12;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-evenly;
+  height: 64px;
+  /* width: 100%; */
+  align-items: center;
+}
+
+.menu-items {
+  order: 2;
+  display: flex;
+}
+
+.menu-items li {
+  list-style: none;
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-items a:hover {
+  color: #9a598e;
+  transition: color 0.3s ease-in-out;
+}
+
+.logo {
+  order: 1;
+  margin-bottom: 0.8rem;
+}
+
+/* ............//// Showcase styling ////......... */
+.showcase-area {
+  height: 50vh;
+    /* url("Images/pexels-pixabay-326281.jpg"); */
+    /* background: linear-gradient(
+      rgba(237, 139, 139, 0.653),
+      rgba(193, 187, 187, 0.336) */
+      background: radial-gradient(
+      rgba(215, 126, 126, 0.653),
+      rgba(225, 136, 136, 0.336),
+      rgba(166, 224, 183, 0.336)
+     
+    ), url(Images/22.jpg);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.showcase-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 2rem;
+  color: #f3f6f7;
+  text-shadow: 0 0 5px #0f0f0f, 0 0 10px #080808,
+             0 0 20px #f9f4f3, 0 0 30px #f8f3f2,
+             0 0 40px #dc9a9a;
+}
+
+.showcase-container a{
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.main-title {
+  text-transform: uppercase;
+  margin-top: 1.9em;
+  color: #fffcfc;
+}
+
+/* ......//about us//...... */
+
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+#banner {
+  width: 630px;
+  height: 450px;
+  margin: 0 auto;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  border: solid black;
+
+  & img {
+      display: block;
+      object-fit: cover;
+      animation: slide 4s cubic-bezier(.86, 0, .05, 1) infinite alternate;
+  }
+}
+#banner-heading{
+  position: absolute;
+  inset: 30% 20%;
+  & h1{
+      color: #fff;
+      font-size: 70px;
+  }
+
+}
+
+@keyframes slide {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(-80%);
+  }
+
+}
+
+/* menu */
+
+#food {
+  padding: 5rem 0 10rem 0;
+  background:radial-gradient(
+    rgba(215, 126, 126, 0.653),
+    rgba(225, 136, 136, 0.336),
+    rgba(166, 224, 183, 0.336)
+   
+   ) 
+ 
+}
+
+#food h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #780553;
+  text-decoration: underline;
+}
+
+/* #food h5 {
+  width: 80%;
+  margin-left: 150px;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 40px;
+  color: #282727;
+} */
+
+.food-container {
+ max-width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.food-container img {
+  display: block;
+  width: 100%;
+  margin: auto;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.img-container {
+  margin: 0 1rem;
+  position: relative;
+}
+
+.img-content {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+
+.img-content h3 {
+  color: #fff;
+  font-size: 2.2rem;
+  
+}
+
+.img-content a {
+  font-size: 1rem;
+}
+
+.img-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.871);
+  opacity: 0;
+  z-index: 1;
+
+  transform: scaleY(0);
+  transform-origin: 100% 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.img-container:hover::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.img-container:hover .img-content {
+  opacity: 1;
+  top: 40%;
+}
+
+/* food items(3) */
+#food-menu{
+   width: 33%;
+   background:radial-gradient(
+    rgba(215, 126, 126, 0.653),
+    rgba(225, 136, 136, 0.336),
+   
+   ) 
+}
+
+.food-menu-heading {
+  text-align: center;
+  font-size: 3.4rem;
+  font-weight: 400;
+  color: #780553;
+  text-decoration: underline;
+}
+
+.food-menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 0px 30px 0px;
+}
+
+.food-menu-container img {
+  display: block;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.food-menu-item {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+}
+
+.food-description {
+  margin: auto 1.5rem;
+}
+
+.font-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #444;
+}
+
+.food-description p {
+  font-size: 1.4rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.food-description .food-price {
+  color: #117964;
+  font-weight: 700;
+}
+
+
+/* food items(3)(2) */
+#food-menu{
+    float: left;
+   width: 34%;
+  /* background:radial-gradient(
+    rgba(232, 187, 187, 0.653),
+    rgba(209, 199, 199, 0.336),
+    rgba(217, 194, 217, 0.336)
+   )  */
+}
+
+.food-menu-heading {
+  text-align: center;
+  font-size: 3.4rem;
+  font-weight: 400;
+  color: #780553;
+  text-decoration: underline;
+}
+
+.food-menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 0px 30px 0px;
+}
+
+.food-menu-container img {
+  display: block;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.food-menu-item {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+}
+
+.food-description {
+  margin: auto 1.5rem;
+}
+
+.font-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #444;
+}
+
+.food-description p {
+  font-size: 1.4rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.food-description .food-price {
+  color: #117964;
+  font-weight: 700;
+}
+
+
+/* food items(3)(3) */
+#food-menu{
+    /* border-left: solid rgb(121, 21, 81); */
+    float: left;
+    width: 33.3%;
+  /* background:radial-gradient(
+    rgb(219, 212, 212),
+    rgb(230, 223, 223),
+    rgb(223, 227, 224)
+   )  */
+}
+
+.food-menu-heading {
+  text-align: center;
+  font-size: 3.4rem;
+  font-weight: 400;
+  color: #780553;
+  text-decoration: underline;
+}
+
+.food-menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 0px 30px 0px;
+}
+
+.food-menu-container img {
+  display: block;
+  width: 230px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.food-menu-item {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+}
+
+.food-description {
+  margin: auto 1.5rem;
+}
+
+.font-title {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #444;
+}
+
+.food-description p {
+  font-size: 1.4rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.food-description .food-price {
+  color: #117964;
+  font-weight: 700;
+}
+
+/* footer */
+.footer-basic {
+  padding:40px 0;
+  background:radial-gradient(
+    rgba(215, 126, 126, 0.653),
+    rgba(225, 136, 136, 0.336),
+    rgba(166, 224, 183, 0.336)
+    /* rgba(227, 148, 148, 0.653),
+    rgba(225, 136, 136, 0.336),
+    rgba(157, 197, 169, 0.336) */
+   ) 
+  
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  display: flex;
+  /* margin-left: 520px; */
+  
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:30px;
+  width:40px;
+  height: 40px;
+  line-height:40px;
+  display:inline-block;
+  text-align: center;
+  border-radius:50%;
+  border:1px solid #514f4f;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+.list-inline {
+  text-align: center;
+  justify-content: center;
+  padding-bottom:25px;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+
+
+/* ......../ media query /.......... */
+
+@media (max-width: 768px) {
+  .navbar {
+    opacity: 0.95;
+  }
+
+  .navbar-container input[type="checkbox"],
+  .navbar-container .hamburger-lines {
+    display: block;
+  }
+
+  .navbar-container {
+    display: block;
+    position: relative;
+    height: 64px;
+  }
+
+  .navbar-container input[type="checkbox"] {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 30px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    opacity: 0;
+  }
+
+  .navbar-container .hamburger-lines {
+    display: block;
+    height: 23px;
+    width: 35px;
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .navbar-container .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #333;
+  }
+
+  .navbar-container .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .navbar .menu-items {
+    padding-top: 100px;
+    background: #fff;
+    height: 100vh;
+    max-width: 300px;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+    padding-left: 50px;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 5px 0px 10px 0px #aaa;
+  }
+
+  .navbar .menu-items li {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .logo {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 2rem;
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(35deg);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-35deg);
+  }
+
+  /* ......./ food /......... */
+
+  .food-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .food-type:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .food-type {
+    box-shadow: 5px 5px 10px 0 #aaa;
+  }
+
+  .img-container {
+    margin: 0;
+  }
+  /* main task */
+
+  .food-menu-container img {
+    margin: auto;
+    width: 10rem;
+  }
+
+  .food-menu-item {
+    flex-direction: column;
+    /* text-align: center; */
+    width: 10rem;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 65%;
+  }
+
+  .navbar .menu-items li {
+    font-size: 1.6rem;
+  }
+
+  /* .testimonial-container {
+    flex-direction: column;
+    text-align: center;
+  } */
+
+  .food-menu-container img {
+    margin: auto;
+    width: 10rem;
+  }
+
+  .food-menu-item {
+    flex-direction: column;
+    /* text-align: center; */
+    width: 10rem;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-img {
+    width: 90%;
+    margin: 3rem auto;
+  }
+
+  .logo {
+    position: absolute;
+    top: 06px;
+    right: 15px;
+    font-size: 3rem;
+  }
+
+  .navbar .menu-items li {
+    margin-bottom: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+ 
+
+  .food-menu-container img {
+    margin: auto;
+    width: 10rem;
+  }
+
+  .food-menu-item {
+    flex-direction: column;
+    /* text-align: center; */
+    width: 10rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+  
+    .footer-basic ul {
+      font-size: 1rem;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- nav code -->
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="index.html">Home</a></li>
+                <!-- <li><a href="#about">About</a></li> -->
+                <li><a href="#food">Category</a></li>
+                <li><a href="#food-menu">Menu</a></li>
+                <!-- <li><a href="#testimonials">Testimonial</a></li> -->
+                <!-- <li><a href="#contact">Contact</a></li> -->
+
+                
+                <!--Step 1 : Adding HTML-->
+                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+             
+                <div id="id01" class="modal">
+             
+                    <form class="modal-content animate" action="index.html">
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <img src=
+                            "Images/food fusion logo.jpg" alt="Avatar" class="avatar">
+                        </div>
+             
+                        <div class="container">
+                            <label><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" required>
+             
+                            <label><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+             
+                            <button type="submit">Login</button>
+                            <input type="checkbox" checked="checked"> Remember me
+                        </div>
+             
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+                        </div>
+                    </form>
+                </div>  
+               
+
+
+
+            </ul>
+            <h1 class="logo"><img src="./Images/food fusion logo.jpg" alt="img" height="40px"></h1>
+        </div>
+    </nav>
+    <section class="showcase-area" id="showcase">
+        <div class="showcase-container">
+            <h1 class="main-title" id="home">Food Fusion</h1>
+            <p>MENU</p>
+            <!-- <a href="#food-menu" class="btn btn-primary">Menu</a> -->
+        </div>
+    </section>
+
+     <!-- next part ie menu -->
+     <section id="food">
+        <h2>Our Menu..</h2>
+        <!-- <h5>We provide a wide range of cuisines and dishes to choose from so 
+            that every foodie in town has their best experience with us.....</h5> -->
+        <div class="food-container container">
+            <div class="food-type Indian">
+                <div class="img-container">
+                    <img src="./Images/11.jpg" alt="error" />
+                    <h3>Food............</h3>
+                    <div class="img-content">
+                        <h3>Food</h3>
+                        <a href="https://en.wikipedia.org/wiki/Indian_cuisinet" class="btn btn-primary" target="blank">learn more</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="food-type Mexican">
+                <div class="img-container">
+                    <img src="./Images/26.jpg" alt="error" />
+                    <h3>Drink............</h3>
+                    <div class="img-content">
+                        <h3>Drink</h3>
+                        <a href="https://en.wikipedia.org/wiki/List_of_Mexican_dishes" class="btn btn-primary" target="blank">learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="food-type Italian">
+                <div class="img-container">
+                    <img src="./Images/20.jpg" alt="error" />
+                    <h3>Dessert..........</h3>
+                    <div class="img-content">
+                        <h3>Dessert</h3>
+                        <a href="https://en.wikipedia.org/wiki/List_of_Italian_dishes" class="btn btn-primary" target="blank">learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- menu items (3)(1)-->
+    <section id="food-menu">
+        <!-- <h2 class="food-menu-heading">Food Fusion Menu..</h2> -->
+        <div class="food-menu-container container">
+            <div class="food-menu-item">
+                <div class="food-img">
+            
+                    <img src="Images/f1.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Farmhouse pizza</h2>
+                    <!-- <p>
+                       A royal delicacy of paneer cubes marinated in spicy flavours and grilled to perfection.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 259</p>
+                </div>
+            </div>
+
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/f2.avif" alt="error" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Loaded Sandwich</h2>
+                    <!-- <p>
+                       with the goodness of cheese and tangyness.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 219</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/f3.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Spring Roll</h2>
+                    <!-- <p>  
+                        The versatility king -"Potato", in its most appetising from -'Aloo Tikki'.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 249</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/f4.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Cheese Hotdog</h2>
+                    <!-- <p>
+                        flavours of your choice (Vanilla, Mocha, Caramel, Choco chips , Brownie , Hazelnuts ).
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 209</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/f5.avif" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Paneer Tikka</h2>
+                    <!-- <p>
+                       Soft fresh cake made up of cheese cream , sugar and eggs.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 276</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/3.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Tacos</h2>
+                    <!-- <p>
+                      Made up of tangi tomato sauce , A dusting of lemon zest and a fresh basil leaves ..With the goodness of Olive oil and cheese.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 159</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+     <!-- menu items (3)(2)-->
+     <section id="food-menu">
+        <!-- <h2 class="food-menu-heading">Food Fusion Menu..</h2> -->
+        <div class="food-menu-container container">
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/c2.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Oreo Brownie Frappe</h2>
+                    <!-- <p>
+                       A royal delicacy of paneer cubes marinated in spicy flavours and grilled to perfection.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 195</p>
+                </div>
+            </div>
+
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/c4.jpg" alt="error" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Lemonade</h2>
+                    <!-- <p>
+                       with the goodness of cheese and tangyness.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 185</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/10.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Orange Blossom</h2>
+                    <!-- <p>  
+                        The versatility king -"Potato", in its most appetising from -'Aloo Tikki'.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 185</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/9.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Choco Frappe</h2>
+                    <!-- <p>
+                        flavours of your choice (Vanilla, Mocha, Caramel, Choco chips , Brownie , Hazelnuts ).
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 195</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/c1.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Cafe Latte</h2>
+                    <!-- <p>
+                       Soft fresh cake made up of cheese cream , sugar and eggs.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 170</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/c3.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Cappuccino</h2>
+                    <!-- <p>
+                      Made up of tangi tomato sauce , A dusting of lemon zest and a fresh basil leaves ..With the goodness of Olive oil and cheese.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 135</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- menu items (3)(3)-->
+     <section id="food-menu">
+        <!-- <h2 class="food-menu-heading">Food Fusion Menu..</h2> -->
+        <div class="food-menu-container container">
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/d1.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Scoop Of Heaven</h2>
+                    <!-- <p>
+                       A royal delicacy of paneer cubes marinated in spicy flavours and grilled to perfection.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 199</p>
+                </div>
+            </div>
+
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/d2.jpg" alt="error" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Strawberry Stunner</h2>
+                    <!-- <p>
+                       with the goodness of cheese and tangyness.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 170</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/d3.avif" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Brownie With Icecream</h2>
+                    <!-- <p>  
+                        The versatility king -"Potato", in its most appetising from -'Aloo Tikki'.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 201</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/d4.avif" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Fruit Overload</h2>
+                    <!-- <p>
+                        flavours of your choice (Vanilla, Mocha, Caramel, Choco chips , Brownie , Hazelnuts ).
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 209</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/d5.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Oreo Overload</h2>
+                    <!-- <p>
+                       Soft fresh cake made up of cheese cream , sugar and eggs.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 139</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="Images/15.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Choco Carnival</h2>
+                    <!-- <p>
+                      Made up of tangi tomato sauce , A dusting of lemon zest and a fresh basil leaves ..With the goodness of Olive oil and cheese.
+                    </p> -->
+                    <p class="food-price">Price: &#8377; 182</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    
+    <div class="footer-basic">
+        <footer>
+            <div class="social">
+                <a href="#"><i class="icon ion-social-google"></i></a>
+                <a href="#"><i class="icon ion-social-github"></i></a>
+                <a href="#"><i class="icon ion-social-twitter"></i></a>
+                <a href="#"><i class="icon ion-social-facebook"></i></a>
+            </div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">Services</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">Food Fusion © 2024</p>
+        </footer>
+    </div>
+
+</body>
+</html>
