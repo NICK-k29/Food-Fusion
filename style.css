@@ -495,6 +495,7 @@ body {
 
 /* .........../Food Menu/............ */
 #food-menu{
+  transform: scale(1);
   background:radial-gradient(
     rgba(215, 126, 126, 0.653),
     rgba(225, 136, 136, 0.336),
@@ -514,6 +515,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 50px 0px 30px 0px;
+}
+
+.food-menu-item:hover{
+  transform: scale(1.12);
+  transition: 0.2s ease-in-out;
 }
 
 .food-menu-container img {
