@@ -258,11 +258,23 @@ body {
 
 /* .........../Food Menu/............ */
 #Our-Menu{
+  transform: scale(1);
   background:radial-gradient(
     rgba(215, 126, 126, 0.653),
     rgba(225, 136, 136, 0.336),
     rgba(166, 224, 183, 0.336)
    ) 
+}
+
+/* //works on 3 containers */
+.food-container:hover{
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+.food-menu-item:hover{
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
 }
 
 .food-menu-heading {
@@ -281,8 +293,8 @@ body {
 
 .food-menu-container img {
   display: block;
-  width: 250px;
-  height: 250px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
@@ -898,6 +910,7 @@ body {
     /* text-align: center; */
     width: 10rem;
   }
+ 
 }
 
 @media (max-width: 500px) {
