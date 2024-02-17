@@ -13,6 +13,7 @@
 }
 
 body {
+  overflow-x: hidden;
   font-family: "Poppins", sans-serif;
   /* background: linear-gradient(pink,rgb(251, 251, 251)); */
 }
@@ -28,9 +29,9 @@ body {
 }
 
 /* scroll container */
-.container{
-  width: 100vw;
-  height: 60vh;
+.container-1{
+  width: 100%;
+  height: 50vh;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -38,9 +39,8 @@ body {
 
 .outer{
   width: 100vw;
-  height: 500px;
+  height: 400px;
   background-color: pink;
-  border-radius: 10px;
   display: flex;
   align-items: center;
   overflow-y: auto;
@@ -50,9 +50,10 @@ body {
 .outer::-webkit-scrollbar{
   display: none;
 }
+
 .card{
   flex: 0 0 auto;
-  margin: 0 10px;
+  margin: 0 0;
   width: 450px;
   height: 400px;
   background: linear-gradient(pink,rgb(185, 185, 223));
@@ -65,7 +66,17 @@ body {
   border-radius: 10px;
   font-weight: 900;
   scroll-snap-align: center;
+  animation: scroller 50s linear infinite;
 }
+@keyframes scroller{
+  95%{
+    transform: translate(-900%);
+  }
+  95.3%{
+    transform: translate(100%);
+  }
+}
+
 
 .outer img{
   height: 400px;
@@ -385,7 +396,7 @@ body {
 
 
 #about {
-  padding: 50px 0;
+   padding: 50px 0;
    background:radial-gradient(
     rgba(215, 126, 126, 0.653),
     rgba(225, 136, 136, 0.336),
@@ -457,7 +468,7 @@ body {
 
 
 #food {
-  padding: 5rem 0 10rem 0;
+  padding: 5rem 0 15rem 0;
   transform: scale(1);
   background:radial-gradient(
     rgba(215, 126, 126, 0.653),
@@ -621,7 +632,8 @@ body {
 /* ........./ Testimonial /.......... */
 
 #testimonials {
-  padding: 5rem 0;
+  padding: 5rem 0rem;
+  padding-top: 10rem;
   background:radial-gradient(
     rgba(215, 126, 126, 0.653),
     rgba(225, 136, 136, 0.336),
@@ -758,6 +770,7 @@ body {
 .footer-basic {
   border-top: solid rgb(172, 67, 114);
   padding:40px 0;
+  padding-top: 7rem;
   background:radial-gradient(
     rgba(215, 126, 126, 0.653),
     rgba(225, 136, 136, 0.336),
