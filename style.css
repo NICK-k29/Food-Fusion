@@ -14,7 +14,65 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  /* background: linear-gradient(pink,rgb(251, 251, 251)); */
 }
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background-color: pink;
+  border-radius: 50%;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #c15ca1;
+}
+
+/* scroll container */
+.container{
+  width: 100vw;
+  height: 60vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer{
+  width: 100vw;
+  height: 500px;
+  background-color: pink;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.outer::-webkit-scrollbar{
+  display: none;
+}
+.card{
+  flex: 0 0 auto;
+  margin: 0 10px;
+  width: 450px;
+  height: 400px;
+  background: linear-gradient(pink,rgb(185, 185, 223));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 10px;
+  font-weight: 900;
+  scroll-snap-align: center;
+}
+
+.outer img{
+  height: 400px;
+  width: 500px;
+  align-self: start;
+}
+
 
 /* ///////////..utility classes../////////// */
 
@@ -180,7 +238,7 @@ body {
 
 .btn-primary:hover {
   background: #8d5c56;
-  transition: background 0.3s ease-in-out;
+  transition:  0.3s ease-in-out;
 }
 
 /* ............/navbar/............ *
@@ -443,12 +501,14 @@ body {
   display: block;
   width: 100%;
   margin: auto;
-  max-height: 300px;
+  max-height: 500px;
   object-fit: cover;
-  object-position: center;
+  /* object-position: center; */
 }
 
 .img-container {
+  /* width: 300px;
+  height: 200px; */
   margin: 0 1rem;
   position: relative;
 }
