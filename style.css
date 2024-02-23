@@ -28,62 +28,6 @@ body {
   background-color: #c15ca1;
 }
 
-/* scroll container */
-.container-1{
-  width: 100%;
-  height: 50vh;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-}
-
-.outer{
-  width: 100vw;
-  height: 400px;
-  background-color: pink;
-  display: flex;
-  align-items: center;
-  overflow-y: auto;
-  scroll-snap-type: x mandatory;
-}
-
-.outer::-webkit-scrollbar{
-  display: none;
-}
-
-.card{
-  flex: 0 0 auto;
-  margin: 0 0;
-  width: 450px;
-  height: 400px;
-  background: linear-gradient(pink,rgb(185, 185, 223));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  border-radius: 10px;
-  font-weight: 900;
-  scroll-snap-align: center;
-  animation: scroller 50s linear infinite;
-}
-@keyframes scroller{
-  95%{
-    transform: translate(-900%);
-  }
-  95.3%{
-    transform: translate(100%);
-  }
-}
-
-
-.outer img{
-  height: 400px;
-  width: 500px;
-  align-self: start;
-}
-
 
 /* ///////////..utility classes../////////// */
 
@@ -162,8 +106,8 @@ body {
       height: 100%;
       overflow: auto;
       background-color: rgb(201, 194, 194);
-      background-color: rgba(176, 174, 174, 0.4);
-      padding-top: 60px;
+      background-color: rgba(176, 174, 174, 0.422);
+      padding-top: 20px;
   }
  
   /*style the model content box*/
@@ -570,64 +514,61 @@ body {
   top: 40%;
 }
 
-/* .........../Food Menu/............ */
-/* #food-menu{
-  background:radial-gradient(
-    rgba(215, 126, 126, 0.653),
-    rgba(225, 136, 136, 0.336),
-    rgba(166, 224, 183, 0.336)
-   ) 
+/* scroll container */
+.container-1{
+  width: 100%;
+  height: 50vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
-.food-menu-heading {
-  text-align: center;
-  font-size: 3.4rem;
-  font-weight: 400;
-  color: #780553;
-  text-decoration: underline;
-}
-
-.food-menu-container {
+.outer{
+  width: 100vw;
+  height: 400px;
+  background-color: pink;
   display: flex;
-  flex-wrap: wrap;
-  padding: 50px 0px 30px 0px;
+  align-items: center;
+  overflow-y: auto;
+  scroll-snap-type: x mandatory;
 }
 
-.food-menu-container img {
-  display: block;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
+.outer::-webkit-scrollbar{
+  display: none;
 }
 
-.food-menu-item {
+.card{
+  flex: 0 0 auto;
+  margin: 0 0;
+  width: 450px;
+  height: 400px;
+  background: linear-gradient(pink,rgb(185, 185, 223));
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 3rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 10px;
+  font-weight: 900;
+  scroll-snap-align: center;
+  animation: scroller 50s linear infinite;
+}
+@keyframes scroller{
+  95%{
+    transform: translate(-900%);
+  }
+  95.3%{
+    transform: translate(100%);
+  }
 }
 
-.food-description {
-  margin: auto 1.5rem;
-}
 
-.font-title {
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: #444;
+.outer img{
+  height: 400px;
+  width: 500px;
+  align-self: start;
 }
-
-.food-description p {
-  font-size: 1.4rem;
-  color: #555;
-  font-weight: 500;
-}
-
-.food-description .food-price {
-  color: #117964;
-  font-weight: 700;
-} */
 
 /* ........./ Testimonial /.......... */
 
