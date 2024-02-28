@@ -54,31 +54,34 @@ body {
   opacity: 0.85;
   height: 50px;
   z-index: 12;
+  text-align: center;
 }
 .back-button{
   cursor: pointer;
   margin-left: 15px;
+  margin-top: -25px;
 }
-.menu-items {
+.nav-items {
   order: 2;
   display: flex;
+  margin-right: 32rem;
 }
 
-.menu-items li {
+.nav-items li {
   list-style: none;
   margin-left: 1.5rem;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
 
-.menu-items a {
+.nav-items a {
   text-decoration: none;
   color: #444;
   font-weight: 500;
   transition: color 0.3s ease-in-out;
 }
 
-.menu-items a:hover {
+.nav-items a:hover {
   color: #9a598e;
   transition: color 0.3s ease-in-out;
 }
@@ -367,9 +370,9 @@ body {
 
     <nav class="navbar">
         <div class="back-button" onClick="previous()" id="backward"> 
-          <span style='font-size:30px; float: left;'>&#8592;</span> 
+          <span style='font-size:30px; float:left;'>&#8592;</span> 
         </div> 
-              <ul class="menu-items">
+              <ul class="nav-items">
                   <li><a href="index.html">Home</a></li>
                   <li><a href="#food">Category</a></li>
                   <li><a href="#food-menu">Menu</a></li>
