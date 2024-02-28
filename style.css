@@ -41,9 +41,12 @@ body {
       border: 1px solid #d9b7b7;
       box-sizing: border-box;
   }
- 
+  .main-login-btn{
+    margin-right: 2em;
+  }
+
   /*set a style for the buttons*/
-  button {
+  .main-login-btn{
     color: #fff;
     background: #8a4949;
     display: inline-block;
@@ -52,8 +55,8 @@ body {
     border-radius: 50px;
     cursor: pointer;
     outline: none;
-     margin-left: 2em;
-     margin-bottom: 1em;
+    margin-left: 2em;
+    margin-bottom: 1em;
     text-transform: uppercase;
     font-weight: small;
   }
@@ -65,9 +68,37 @@ body {
  
   /*set extra style for the cancel button*/
   .cancelbtn {
-      width: auto;
+      /* width: auto;
       padding: 10px 18px;
-      background-color: #fb4f43b9;
+      background-color: #fb4f43b9; */
+      color: #fff;
+    background: #8a4949;
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    margin-left: 2em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    font-weight: small;
+  }
+  .login-btn{
+    color: #fff;
+    background: #8a4949;
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    margin-left: 2em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    font-weight: small;
+    margin-top: 1em;
+    margin-left: 25rem;
   }
  
   /*centre the display image inside the container*/
@@ -107,12 +138,12 @@ body {
       overflow: auto;
       background-color: rgb(201, 194, 194);
       background-color: rgba(176, 174, 174, 0.422);
-      padding-top: 20px;
+      padding-top: 60px;
   }
  
   /*style the model content box*/
   .modal-content {
-      background-color: #c1a8a8;
+      background-color: #c1a8a8a7;
       margin: 5% auto 15% auto;
       border: 1px solid #9b8d8d;
       width: 80%;
@@ -168,33 +199,7 @@ body {
       }
   }
 
-.container {
-  max-width: 1200px;
-  width: 90%;
-  margin: auto;
-}
 
-.btn {
-  display: inline-block;
-  padding: 0.5em 1.5em;
-  text-decoration: none;
-  border-radius: 50px;
-  cursor: pointer;
-  outline: none;
-  margin-top: 1em;
-  text-transform: uppercase;
-  font-weight: small;
-}
-
-.btn-primary {
-  color: #fff;
-  background: #8a4949;
-}
-
-.btn-primary:hover {
-  background: #8d5c56;
-  transition:  0.3s ease-in-out;
-}
 
 /* ............/navbar/............ *
 
@@ -226,6 +231,7 @@ body {
 .menu-items {
   order: 2;
   display: flex;
+  margin-right: 15rem;
 }
 
 .menu-items li {
@@ -253,6 +259,41 @@ body {
 }
 
 /* ............//// Showcase styling ////......... */
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  text-decoration: none;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 1em;
+  text-transform: uppercase;
+  font-weight: small;
+}
+
+.btn-primary {
+  color: #fff;
+  background: #8a4949;
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  text-decoration: none;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: small;
+}
+
+.btn-primary:hover {
+  background: #8d5c56;
+  transition:  0.3s ease-in-out;
+}
 .showcase-area {
   height: 50vh;
     /* url("Images/pexels-pixabay-326281.jpg"); */

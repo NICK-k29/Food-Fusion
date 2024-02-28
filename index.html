@@ -10,10 +10,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
      <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <link rel="stylesheet" href="style.css" />
-
-
 </head>
-
 <body>
     <nav class="navbar">
         <div class="navbar-container container">
@@ -26,41 +23,35 @@
             <ul class="menu-items">
                 <li><a href="#home">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="#food">Category</a></li>
+                <!-- <li><a href="#food">Category</a></li> -->
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="#testimonials">Testimonial</a></li>
                 <li><a href="contact.html">Contact</a></li>
-
-                
-                <!--Step 1 : Adding HTML-->
-                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-             
+            </ul> 
+            <h1 class="logo"><img src="./Images/food fusion logo.jpg" alt="img" height="40px"></h1>
+             <!--Step 1 : Login form-->
+               <button onclick="document.getElementById('id01').style.display='block'" class="main-login-btn" style="width:auto;">Login</button>
                 <div id="id01" class="modal">
-             
                     <form class="modal-content animate" action="menu.html">
                         <div class="imgcontainer">
                             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                             <img src="Images/food fusion logo.jpg" alt="Avatar" class="avatar">
                         </div>
-             
                         <div class="container">
                             <label><b>Username</b></label>
                             <input type="text" placeholder="Enter Username" name="uname" required>
-             
+            
                             <label><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="psw" required>
-             
-                            <button type="submit">Login</button>
+            
+                            <button class="login-btn" type="submit">Login</button>
                         </div>
-             
                         <div class="container" style="background-color:#f1f1f1">
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                             <span class="psw"><a href="#">Forgot password?</a></span>
                         </div>
                     </form>
-                </div>  
-            </ul>
-            <h1 class="logo"><img src="./Images/food fusion logo.jpg" alt="img" height="40px"></h1>
+                </div>
         </div>
     </nav>
 
